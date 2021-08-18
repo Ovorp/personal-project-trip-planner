@@ -48,7 +48,7 @@ async function register(req, res) {
 async function login(req, res) {
   const { email, password } = req.body;
   const db = req.app.get('db');
-  console.log(email, password, db.user)
+  console.log(db)
   const result = await db.user.login(email).catch((err) => console.log('test'));
   const user = result[0];
   if (!user) {
