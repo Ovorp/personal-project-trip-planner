@@ -51,8 +51,6 @@ const { SERVER_PORT, CONNECTION_STRING, SECRET, WEATHER_KEY } = process.env;
 
 const app = express();
 
-console.log(CONNECTION_STRING, 'connection str', )
-
 massive({
   connectionString: CONNECTION_STRING,
   ssl: {
@@ -60,7 +58,7 @@ massive({
   },
 }).then((dbInstance) => {
   app.set('db', dbInstance);
-  console.log('The database is running');
+  console.log('The database is running', dbInstance, 'db instance');
 });
 
 app.use(
@@ -228,4 +226,4 @@ app.post('/api/text', sendText);
 
 let port = process.env.PORT || SERVER_PORT || 5050;
 
-app.listen(port, () => console.log(`Running on port ${port}`));
+app.listen(port, () => console.log('port',port, CONNECTION_STRING, 'connection str'));
