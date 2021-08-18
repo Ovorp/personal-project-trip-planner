@@ -51,6 +51,8 @@ const { SERVER_PORT, CONNECTION_STRING, SECRET, WEATHER_KEY } = process.env;
 
 const app = express();
 
+console.log(CONNECTION_STRING, 'connection str', )
+
 massive({
   connectionString: CONNECTION_STRING,
   ssl: {
