@@ -1,0 +1,1 @@
+TRUNCATE to_do_list_item RESTART IDENTITY CASCADE;

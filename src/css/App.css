@@ -1,0 +1,94 @@
+.App {
+  min-height: 100vh;
+  text-align: center;
+  background-color: #e8f0f2;
+  color: #343a40;
+}
+
+.test {
+  height: 200vh;
+}
+
+.home {
+  height: 100%;
+  width: 100%;
+  padding-left: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.trip-card {
+  display: flex;
+  width: 400px;
+  align-content: center;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.pic-grid {
+  width: calc(60vw);
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(8);
+  grid-gap: 15px;
+}
+
+.pictures {
+  border-radius: 5px;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+  object-fit: cover;
+  width: 100%;
+  height: 250px;
+}
+
+.carousel1 {
+  margin-top: 15px;
+  height: 50vh;
+  width: 50vw;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.carousel-inner {
+  height: 100%;
+}
+
+.carousel-item {
+  height: 100%;
+  padding-top: 20px;
+}
+
+.card {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  padding: auto;
+  display: flex;
+  align-items: center;
+  border: solid 3px #6e7491;
+  border-top-left-radius: 37px 140px;
+  border-top-right-radius: 23px 130px;
+  border-bottom-left-radius: 110px 19px;
+  border-bottom-right-radius: 120px 24px;
+  transform: rotate(-1deg);
+  box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
+  transition: all 0.13s ease-in;
+}
+
+.card:hover {
+  transform: translateY(-10px) rotate(1deg);
+  box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover .border {
+  transform: translateY(4px) rotate(-5deg);
+}
+
+.card-title {
+  margin-bottom: 40px;
+}
