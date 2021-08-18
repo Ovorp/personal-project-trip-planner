@@ -58,7 +58,7 @@ massive({
   },
 }).then((dbInstance) => {
   app.set('db', dbInstance);
-  console.log('The database is running', dbInstance, 'db instance');
+  console.log('The database is running');
 });
 
 app.use(
