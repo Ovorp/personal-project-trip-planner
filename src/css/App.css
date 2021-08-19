@@ -3,7 +3,12 @@
   text-align: center;
   background-color: #e8f0f2;
   color: #343a40;
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
 }
+
+/* background-color: #008c8c;
+background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
 .test {
   height: 200vh;
@@ -17,7 +22,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 8px;
 }
+
+/* .welcome {
+  background-color: blue;
+} */
 
 .trip-card {
   display: flex;
@@ -28,7 +38,7 @@
 }
 
 .pic-grid {
-  width: calc(60vw);
+  width: calc(50vw);
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);

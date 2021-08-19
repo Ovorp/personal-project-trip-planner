@@ -40,7 +40,7 @@ function Journal(props) {
 
   return (
     <div>
-      <h1>Journal Component</h1>{' '}
+      <h1>Journal</h1>
       {!isLoggedIn ? (
         <h2>Please go to the home page and log in</h2>
       ) : (

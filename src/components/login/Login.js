@@ -80,6 +80,7 @@ function Login(props) {
       {/* need to change this  */}
       <div>
         <h2>Are you new?</h2>
+        <br />
         <Link to="/newuser">
           <Button variant="primary">Register</Button>
         </Link>

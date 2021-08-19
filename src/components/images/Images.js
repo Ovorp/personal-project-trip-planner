@@ -13,7 +13,7 @@ function Images(props) {
       setImageFiles(result.data);
     }
     getPics(props.user.id);
-  }, []);
+  }, [props.user.id]);
 
   return (
     <div className="pic-grid">

@@ -9,6 +9,65 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+}
+
+.nav {
+  align-items: flex-start;
+  font-size: 1.6rem;
+  position: fixed;
+  top: 8rem;
+}
+
+.nav-main-link {
+  margin-bottom: 1.5rem;
+  color: #e8f0f2 !important;
+}
+
+.mainNav a:hover,
+.mainNav a:focus,
+.mainNav a:active {
+  text-decoration: none;
+}
+.mainNav a {
+  transition: color 0.1s, background-color 0.1s;
+}
+.mainNav a {
+  position: relative;
+  display: block;
+  transition: color 0.1s, background-color 0.1s, padding 0.2s ease-in;
+  color: #000;
+}
+.mainNav a::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #000;
+  transform-origin: right top;
+  transform: scale(0, 1);
+  transition: color 0.1s, transform 0.2s ease-out;
+}
+.mainNav a:active::before {
+  background-color: #000;
+}
+.mainNav a:hover::before,
+.mainNav a:focus::before {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+
+.logout {
+  position: fixed;
+  bottom: 0px;
+  margin-bottom: 1rem;
+}
+
+.logout h4 {
+  color: #e8f0f2 !important;
 }
 
 .second-nav {
@@ -20,5 +79,12 @@
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 50px 20px;
+}
+
+.second-nav a {
+  color: #053742;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
 }

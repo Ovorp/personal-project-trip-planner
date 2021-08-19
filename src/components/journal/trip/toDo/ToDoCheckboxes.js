@@ -15,6 +15,7 @@ function ToDoCheckboxes(props) {
       props.loadDataToStore(userInfoForStore.data);
     }
     getInfo(props.user.id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [check]);
 
   async function updateIsDone(toDoListItemId, itemName, isDone) {

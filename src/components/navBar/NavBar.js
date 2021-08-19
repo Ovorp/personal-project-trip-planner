@@ -20,16 +20,16 @@ function NavBar(props) {
     <nav className="mainNav">
       <Nav defaultActiveKey="/" className="flex-column">
         <LinkContainer to="/">
-          <Nav.Link>Home</Nav.Link>
+          <Nav.Link className="nav-main-link">Home</Nav.Link>
         </LinkContainer>
         <LinkContainer to="/journal/sum">
-          <Nav.Link>Journal</Nav.Link>
+          <Nav.Link className="nav-main-link">Journal</Nav.Link>
         </LinkContainer>
         <LinkContainer to="/pictures">
-          <Nav.Link>Pictures</Nav.Link>
+          <Nav.Link className="nav-main-link">Pictures</Nav.Link>
         </LinkContainer>
         {/* <Nav.Link>Trips</Nav.Link> */}
-        <Nav.Link>Something Else</Nav.Link>
+        <Nav.Link className="nav-main-link">Something Else</Nav.Link>
         <div className="logout">
           <Nav.Link>
             <h4 onClick={logout}>Log out</h4>

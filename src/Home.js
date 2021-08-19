@@ -7,7 +7,7 @@ function Home(props) {
   const isLoggedIn = props.user.isLoggedIn;
 
   return (
-    <div>
+    <div className="welcome">
       <h1>{!isLoggedIn ? 'Welcome App Please log in' : null}</h1>
       {!isLoggedIn ? <Login /> : <Weather />}
     </div>

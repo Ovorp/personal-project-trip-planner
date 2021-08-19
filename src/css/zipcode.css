@@ -1,0 +1,34 @@
+.zipcode {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.location {
+  font-size: 2rem;
+}
+
+.car-weather ul li {
+  list-style: none;
+}
+
+.weather-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 1.3rem;
+}
+
+.weather-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+
+  text-transform: capitalize;
+}
+
+.wind {
+  font-size: 1.4rem;
+}

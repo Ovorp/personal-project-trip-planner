@@ -226,4 +226,4 @@ app.post('/api/text', sendText);
 
 let port = process.env.PORT || SERVER_PORT || 5050;
 
-app.listen(port, () => console.log('port',port, CONNECTION_STRING, 'connection str'));
+app.listen(port, () => console.log('port', port));
