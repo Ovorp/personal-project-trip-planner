@@ -11,7 +11,6 @@ async function uploadImage(req, res) {
   const result = await uploadToS3(imageFile).catch((err) =>
     console.log(err, '!!!UploadImage!!!')
   );
-  console.log(result);
   await unlinkImageFile(imageFile.path);
   await db.picture.add_picture([tripId, userId, result.key, description]);
   const imageInfo = {

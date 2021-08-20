@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ToDoCheckboxes from './ToDoCheckboxes';
+import '../../../../css/itemList.css';
 
 function ToDoItems(props) {
   const itemArr = props.trip.filter(
@@ -8,7 +9,7 @@ function ToDoItems(props) {
   )[0].toDoList;
 
   return (
-    <>
+    <div className="item-list">
       {itemArr.map((val, i) => {
         return (
           <div key={i}>
@@ -16,7 +17,7 @@ function ToDoItems(props) {
           </div>
         );
       })}
-    </>
+    </div>
   );
 }
 

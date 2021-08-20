@@ -31,10 +31,18 @@ This is mostly intended for prototyping; please download the pattern and re-host
 
 .trip-card {
   display: flex;
-  width: 400px;
+  width: 50vw;
   align-content: center;
   justify-content: space-between;
   margin-top: 30px;
+}
+
+.trip-name {
+  width: 90%;
+  margin-right: 5px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: left;
 }
 
 .pic-grid {
@@ -42,8 +50,9 @@ This is mostly intended for prototyping; please download the pattern and re-host
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(8);
+  /* grid-template-rows: repeat(8); */
   grid-gap: 15px;
+  font-weight: 700;
 }
 
 .pictures {

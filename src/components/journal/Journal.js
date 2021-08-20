@@ -10,9 +10,8 @@ function NoTripSelect(props) {
   const [addTrip, setAddTrip] = useState(false);
   return (
     <>
-      <p>This is where you can pick what trip you want to select</p>
       <Button variant="primary" onClick={() => setAddTrip(!addTrip)}>
-        + Add new trip
+        {addTrip ? 'Close Form' : '+ Add new trip'}
       </Button>
       {addTrip ? <TripForm /> : null}
       {/* This will probably have to be a new component */}

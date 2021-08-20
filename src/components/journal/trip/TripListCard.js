@@ -10,7 +10,9 @@ function TripListCard(props) {
       {props.tripArr.map((val, i) => {
         return (
           <div className="trip-card" key={val.tripId}>
-            <p key={i}>{val.tripName}</p>
+            <p key={i} className="trip-name">
+              {val.tripName}
+            </p>
             <Button
               variant="info"
               key={val.tripId}

@@ -28,20 +28,26 @@ function ToDoCheckboxes(props) {
 
   return (
     <div>
-      <InputGroup className="mb-3">
-        <InputGroup.Checkbox
-          checked={check}
-          onChange={() => {
-            updateIsDone(
-              props.val.to_do_list_item_id,
-              props.val.item_name,
-              !props.val.is_done
-            );
+      <InputGroup className="mb-3 box box-boarder">
+        <div className="todo-checkboxes">
+          <InputGroup.Checkbox
+            className="checkbox-box"
+            checked={check}
+            onChange={() => {
+              updateIsDone(
+                props.val.to_do_list_item_id,
+                props.val.item_name,
+                !props.val.is_done
+              );
 
-            setCheck(!check);
-          }}
-        />
-        <p key={props.val.to_do_list_item_id}>{props.val.item_name}</p>
+              setCheck(!check);
+            }}
+          />
+
+          <p key={props.val.to_do_list_item_id} className="box-txt">
+            {props.val.item_name}
+          </p>
+        </div>
       </InputGroup>
     </div>
   );

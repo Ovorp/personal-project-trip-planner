@@ -9,8 +9,6 @@ async function addPeople(req, res) {
     phoneNumber,
   ]);
 
-  console.log(person);
-
   res.status(200).json(person[0]);
 }
 
@@ -41,8 +39,6 @@ async function updatesPeople(req, res) {
 
   res.status(200).json(newPeople[0]);
 }
-
-function deletePersonList(req, res) {}
 
 function deletePeople(req, res) {
   const { peopleId } = req.body;

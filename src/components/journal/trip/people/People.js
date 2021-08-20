@@ -13,7 +13,7 @@ function People(props) {
   return (
     <div>
       <Button onClick={() => setAddPerson(!addPerson)}>
-        Add a new person to this trip
+        {!addPerson ? 'Add a new person to this trip' : 'Hide Form'}
       </Button>
       {addPerson ? <PersonForm /> : null}
 

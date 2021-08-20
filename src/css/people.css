@@ -1,0 +1,28 @@
+.people {
+  margin-top: 2rem;
+  width: 50vw;
+}
+
+.acc-main {
+  height: 100vh;
+}
+
+.acc-header {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.acc-body {
+  width: 100%;
+  /* padding: 0px 15px;  */
+  display: flex;
+  justify-content: space-around;
+}
+
+.body-bold {
+  font-weight: bold;
+}

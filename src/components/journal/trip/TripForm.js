@@ -18,7 +18,7 @@ function TripForm(props) {
     <div>
       <Form>
         <Form.Group className="mb-3">
-          <Form.Label>Trip Name</Form.Label>
+          <Form.Label></Form.Label>
           <Form.Control
             placeholder="Enter the Name of your trip"
             onChange={(e) => setTripName(e.target.value)}

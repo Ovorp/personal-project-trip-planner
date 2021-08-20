@@ -49,7 +49,7 @@ async function login(req, res) {
   const { email, password } = req.body;
   const db = req.app.get('db');
 
-  const result = await db.user.login(email).catch((err) => console.log('test'));
+  const result = await db.user.login(email).catch((err) => console.log(err));
   const user = result[0];
   if (!user) {
     res.status(404).json('User is not found');

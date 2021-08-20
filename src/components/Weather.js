@@ -21,7 +21,9 @@ export default function Weather() {
     <div>
       <Form>
         <Form.Group className="mb-3 zipcode" controlId="zipCode">
-          <Form.Label>Zip Code</Form.Label>
+          <Form.Label>
+            Enter your zip code to see the current weather
+          </Form.Label>
           <Form.Control
             placeholder="Zip Code"
             onChange={(e) => setZipCode(e.target.value)}

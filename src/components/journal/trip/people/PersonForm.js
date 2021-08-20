@@ -41,7 +41,8 @@ function PersonForm(props) {
 
   return (
     <div>
-      Person Form
+      <br />
+
       <Form>
         <Form.Group className="mb-3">
           <Form.Control
@@ -69,7 +70,7 @@ function PersonForm(props) {
 
         <Form.Group className="mb-3">
           <Form.Control
-            placeholder="Phone number"
+            placeholder="Phone number (10 digits please)"
             onChange={(e) => setPhoneNumber(e.target.value.toString())}
             value={phoneNumber}
           />
