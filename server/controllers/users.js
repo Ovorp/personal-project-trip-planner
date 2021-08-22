@@ -30,8 +30,13 @@ async function register(req, res) {
   const salt = await bcryptjs.genSalt(10);
   const hash = await bcryptjs.hash(password, salt);
 
+  const newPhoneNumber = [...phoneNumber]
+    .filter((val) => val >= 0 && val <= 9)
+    .join('')
+    .replace(/\s+/g, '');
+
   const newUser = await db.user
-    .register([firstName, lastName, hash, phoneNumber, email])
+    .register([firstName, lastName, hash, newPhoneNumber, email])
     .catch((err) => console.log(err));
 
   const user = newUser[0];
