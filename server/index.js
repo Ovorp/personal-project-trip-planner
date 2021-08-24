@@ -45,7 +45,6 @@ const {
 } = require('./controllers/images.js');
 
 const { sendText } = require('./controllers/texting.js');
-const { response } = require('express');
 
 // const { IAM } = require('aws-sdk');  Dont think i need this
 const { SERVER_PORT, CONNECTION_STRING, SECRET, WEATHER_KEY, BEARER_TOKEN } =
