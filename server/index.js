@@ -45,9 +45,11 @@ const {
 } = require('./controllers/images.js');
 
 const { sendText } = require('./controllers/texting.js');
+const { response } = require('express');
 
 // const { IAM } = require('aws-sdk');  Dont think i need this
-const { SERVER_PORT, CONNECTION_STRING, SECRET, WEATHER_KEY } = process.env;
+const { SERVER_PORT, CONNECTION_STRING, SECRET, WEATHER_KEY, BEARER_TOKEN } =
+  process.env;
 
 const app = express();
 
@@ -78,10 +80,6 @@ app.use(express.static(`${__dirname}/../build`));
 
 // Weather endpoint open to everyone
 
-// app.get('/', (req, res) => {
-//   res.send('Hello, World');
-// });
-
 app.get(`/api/weather/:zipCode`, (req, res) => {
   const { zipCode } = req.params;
   axios
@@ -108,6 +106,117 @@ app.get(`/api/weather`, (req, res) => {
       res.status(200).json(response.data);
     })
     .catch((err) => console.log(err));
+});
+
+// Twitter endpoints
+const rulesURL = 'https://api.twitter.com/2/tweets/search/stream/rules';
+
+const streamURL = `https://api.twitter.com/2/tweets/search/stream?tweet.fields=created_at&expansions=author_id&user.fields=created_at`;
+// const streamURL = 'https://api.twitter.com/2/tweets/search/stream';
+const rules = [{ value: 'flyfishing' }];
+
+// get stream rules
+app.get(`/api/twitter`, (req, res) => {
+  axios
+    .get(rulesURL, {
+      headers: {
+        Authorization: `Bearer ${BEARER_TOKEN}`,
+      },
+    })
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err));
+  res.sendStatus(202);
+});
+
+// set stream rules
+
+app.post(`/api/twitter`, async (req, res) => {
+  const dataRules = {
+    add: rules,
+  };
+
+  const response = await axios
+    .post(rulesURL, dataRules, {
+      headers: {
+        'contnet-type': 'application/json',
+        Authorization: `Bearer ${BEARER_TOKEN}`,
+      },
+    })
+    .catch((err) => console.log(err));
+  console.log(response.data);
+  res.sendStatus(202);
+});
+
+// delete stream rules, only need to to set stuff up.
+
+app.delete(`/api/twitter`, async (req, res) => {
+  const ids = [
+    {
+      id: '1429683132521873412',
+      value: 'cat has:images',
+      tag: 'cat with images',
+    },
+  ].map((val) => val.id);
+
+  console.log(ids);
+  const dataRules = {
+    delete: {
+      ids: ids,
+    },
+  };
+
+  const response = await axios
+    .post(rulesURL, dataRules, {
+      headers: {
+        'contnet-type': 'application/json',
+        Authorization: `Bearer ${BEARER_TOKEN}`,
+      },
+    })
+    .catch((err) => console.log(err));
+  console.log(response.data);
+  res.sendStatus(202);
+});
+
+app.get(`/api/twitter/stream`, (req, res) => {
+  console.log(streamURL);
+  axios
+    .get(`https://api.twitter.com/2/tweets/search/stream`, {
+      headers: {
+        Authorization: `Bearer ${BEARER_TOKEN}`,
+      },
+    })
+    .then((response) => {
+      console.log(response.data);
+      res.sendStatus(200);
+    })
+
+    .catch((err) => console.log(err));
+
+  // stream.on('data', (data) => {
+  //   try {
+  //     const json = JSON.parse(data);
+  //     console.log(json);
+  //   } catch (error) {}
+  // });
+  // res.send(200).json(stream);
+});
+
+app.get(`/api/twitter/test`, async (req, res) => {
+  // https://api.twitter.com/2/tweets?ids=1228393702244134912,1227640996038684673,1199786642791452673&tweet.fields=created_at&expansions=author_id&user.fields=created_at expansions=attachments.media_keys&media.fields=preview_image_url,url
+
+  // &expansions=attachments.media_keys
+  const response = await axios
+    .get(
+      `https://api.twitter.com/2/tweets/search/recent?query=fly_fishing&expansions=attachments.media_keys&media.fields=preview_image_url,url`,
+      {
+        headers: {
+          Authorization: `Bearer ${BEARER_TOKEN}`,
+        },
+      }
+    )
+    .catch((err) => console.log(err));
+
+  res.status(200).json(response.data);
 });
 
 //  Middleware to check if the user has a session.
