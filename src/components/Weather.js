@@ -57,7 +57,7 @@ export default function Weather() {
                 <Card.Text>
                   <ul className="weather-list">
                     <li>Feels Like : {currentWeather.main.feels_like}°</li>
-                    <li>Humidity : {currentWeather.main.humidity}</li>
+                    <li>Humidity : {currentWeather.main.humidity}%</li>
                     <li>Current Temperature : {currentWeather.main.temp}°</li>
                     <li>High Today : {currentWeather.main.temp_max}°</li>
                     <li>Low Today : {currentWeather.main.temp_min}°</li>
