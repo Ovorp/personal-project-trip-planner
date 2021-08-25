@@ -8,7 +8,7 @@ function Home(props) {
 
   return (
     <div className="welcome">
-      <h1>{!isLoggedIn ? 'Welcome App Please log in' : null}</h1>
+      <h1>{!isLoggedIn ? 'Welcome Please log in' : null}</h1>
       {!isLoggedIn ? <Login /> : <Weather />}
     </div>
   );

@@ -15,9 +15,11 @@ function Images(props) {
     getPics(props.user.id);
   }, [props.user.id]);
 
+  console.log(imageFiles);
+
   return (
     <div className="pic-grid">
-      {imageFiles.map((image) => (
+      {imageFiles.map((image, i) => (
         <div key={image.picture_id}>
           <img
             className="pictures"
@@ -25,6 +27,19 @@ function Images(props) {
             alt={image.picture_description}
           />
           <p>{image.picture_description}</p>
+          <button
+            onClick={() => {
+              axios
+                .delete(`/api/image/${image.picture_key}`)
+                .catch((err) => console.log(err));
+
+              const newArrOfImages = [...imageFiles].splice(i, 1);
+              console.log(newArrOfImages);
+              setImageFiles(newArrOfImages);
+            }}
+          >
+            Delete
+          </button>
         </div>
       ))}
     </div>
