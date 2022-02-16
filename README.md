@@ -35,3 +35,4 @@ This is a trip planning app that I created for my DevMountain bootcamp.
 
 ## Mobile is built with React Native
 - Used Expo as a framework
+- See https://github.com/Ovorp/Dev_Mountain_Personal_Project_mobile_app for the React native code
